@@ -1,0 +1,63 @@
+/* reclamation-form.component.css */
+form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1em;
+  background: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+div {
+  margin-bottom: 1em;
+}
+
+label {
+  margin-bottom: .5em;
+  color: #333333;
+  display: block;
+}
+
+textarea, input, select {
+  border: 1px solid #CCCCCC;
+  padding: .5em;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 0.7em;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+/* styles.scss ou styles.css */
+.toast-top-right {
+  top: 10px; /* Ajustez cette valeur si nécessaire */
+  right: 10px; /* Ajustez cette valeur si nécessaire */
+}
+
+.toast-success {
+  background-color: #28a745; /* Couleur de fond verte */
+  color: #fff; /* Couleur du texte en blanc pour le contraste */
+}
+
+/* Optionnel : si vous souhaitez personnaliser le texte ou le titre */
+.toast-title {
+  color: #fff; /* Couleur du titre */
+}
+
+.toast-message {
+  color: #fff; /* Couleur du message */
+}
+

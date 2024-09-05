@@ -1,0 +1,225 @@
+
+// Définition des variables
+$color-danger: #dc3545;
+$color-success: #28a745;
+$text-color: #555;
+$placeholder-color: #6c757d;
+$border-color: #ccc;
+$background-color: #fff;
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+// Boutons
+.btn-outline-danger {
+  border-color: $color-danger;
+  color: $color-danger;
+
+  &:hover {
+    background-color: $color-danger;
+    color: white;
+  }
+}
+
+.btn-outline-success {
+  border-color: $color-success;
+  color: $color-success;
+
+  &:hover {
+    background-color: $color-success;
+    color: white;
+  }
+}
+
+// Style de l'en-tête
+.aa {
+  margin-left: 330px;
+  color: $text-color;
+}
+
+// Image arrondie
+.rounded-1 {
+  border-radius: 0.25rem;
+  object-fit: cover;
+}
+
+// Boîte de dialogue de succès
+.success-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  padding: 20px;
+  box-shadow: 0 2px 8px $shadow-color;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .success-content {
+    text-align: center;
+
+    h3 {
+      color: green;
+      font-size: 1.5em;
+    }
+  }
+}
+
+// Sélecteur personnalisé
+.custom-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  padding-right: 30px;
+  margin-left: 450px;
+  margin-top: 10px;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &::before {
+    content: 'Choisir un type';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $placeholder-color;
+    pointer-events: none;
+    display: block;
+  }
+
+  &:focus::before,
+  &:valid::before {
+    display: none;
+  }
+}
+
+// Styles pour le formulaire
+.form-control {
+  margin-left: 0;
+}
+
+// Styles spécifiques pour les entrées du formulaire
+input[type='file'] {
+  margin-top: 10px;
+}
+
+input {
+  &:invalid {
+    border-color: $color-danger;
+  }
+
+  &:focus {
+    border-color: $color-success;
+    box-shadow: 0 0 0 0.2rem rgba($color-success, 0.25);
+  }
+}
+
+// Styles pour les messages d'erreur
+span {
+  color: red;
+}
+
+// Style pour le bouton de sauvegarde
+button {
+  &.btn-outline-danger {
+    border-color: $color-danger;
+    color: $color-danger;
+
+    &:hover {
+      background-color: $color-danger;
+      color: white;
+    }
+  }
+
+  &.btn-outline-success {
+    border-color: $color-success;
+    color: $color-success;
+
+    &:hover {
+      background-color: $color-success;
+      color: white;
+    }
+  }
+}
+
+
+
+/* From Uiverse.io by mrhyddenn */ 
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 62px;
+  height: 35px;
+ }
+ 
+ /* Hide default HTML checkbox */
+ .switch input {
+  opacity: 1;
+  width: 0;
+  height: 0;
+ }
+ 
+ /* The slider */
+ .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  background: #fff;
+  transition: .4s;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+ }
+ 
+ .slider:before {
+  position: absolute;
+  content: "";
+  height: 1.9em;
+  width: 1.9em;
+  border-radius: 16px;
+  left: 1.2px;
+  top: 0;
+  bottom: 0;
+  background-color: white;
+  box-shadow: 0 2px 5px #999999;
+  transition: .4s;
+ }
+ 
+ input:checked + .slider {
+  background-color: #5fdd54;
+  border: 1px solid transparent;
+ }
+ 
+ input:checked + .slider:before {
+  transform: translateX(1.5em);
+ }
+
+
+/* styles.scss ou styles.css */
+.toast-top-right {
+  top: 10px; /* Ajustez cette valeur si nécessaire */
+  right: 10px; /* Ajustez cette valeur si nécessaire */
+}
+
+.toast-success {
+  background-color: #28a745; /* Couleur de fond verte */
+  color: #fff; /* Couleur du texte en blanc pour le contraste */
+}
+
+/* Optionnel : si vous souhaitez personnaliser le texte ou le titre */
+.toast-title {
+  color: #fff; /* Couleur du titre */
+}
+
+.toast-message {
+  color: #fff; /* Couleur du message */
+}
+

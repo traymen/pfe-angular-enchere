@@ -1,0 +1,58 @@
+<!-- Structure de la carte Angular -->
+<div class="history-container">
+  <h3 class="primary"> VIP Enchère</h3>
+  <div class="mobilite-list">
+    <div *ngFor="let enchere of enchere" class="mobilite-card">
+      <div class="image-and-info">
+        <hr>
+
+        <div class="enchere-image">
+          <img [src]="'data:image/jpeg;base64,' + enchere.image" alt="Image de {{ enchere.nomProduit }}" class="flexible-image">
+        </div>
+        <hr>
+
+        <div class="info">
+          <div class="property text-secondary">
+            <span class="label">Nom produit:</span>
+            <span class="nomproduit">{{ enchere.nomProduit }}</span>
+          </div>
+
+          <div class="property text-secondary">
+            <span class="label">Prix Boutique:</span>
+            <span class="prix">{{ enchere.prix }} <span class="label">DT</span></span>
+          </div>
+          
+          <div class="property text-secondary">
+            <span class="label">Date:</span>
+            <span class="date">{{ enchere.date }}</span>
+          </div>
+          
+          <div class="property text-secondary">
+            <span class="label">Heure:</span>
+            <span class="heure">{{ enchere.heure }}</span>
+          </div>
+          
+          <div class="property text-secondary">
+            <span class="label">Description produit:</span>
+            <span class="description">{{ enchere.descriptionProduit }}</span>
+          </div>
+          
+          <hr>
+        </div>
+      </div>
+
+      <div class="button-container">
+        <div class="top-buttons">
+          <button 
+            (click)="navigateByIdEnchere(enchere)" 
+            class="inscription-button btn btn-primary"
+            [disabled]="enchere.nombreCondidat === enchere.nombreCondidatsInscrits">
+            Inscription à 
+            <span class="prixE">{{ enchere.prixE }}</span>
+            <span class="label">DT</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,134 @@
+/* Basic Reset */
+body, h1, p, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.payment-info {
+    margin-bottom: 20px;
+}
+
+.payment-info p {
+    font-size: 18px;
+}
+
+#payment-element {
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    background-color: #5469d4;
+    border: none;
+    color: #fff;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+button:disabled {
+    background-color: #aab7c4;
+    cursor: not-allowed;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #fff;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+#payment-message {
+    margin-top: 20px;
+    text-align: center;
+    color: #4caf50;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+
+.success-message {
+    position: fixed; /* Utilise fixed pour que le message soit au-dessus du reste du contenu */
+    top: 50%; /* Positionne verticalement au milieu de la page */
+    left: 50%; /* Centre horizontalement */
+    transform: translate(-50%, -50%); /* Ajuste pour centrer précisément */
+    background-color: #d4edda; /* Couleur de fond verte claire */
+    color: #155724; /* Couleur du texte verte foncée */
+    padding: 15px; /* Espacement interne */
+    border: 1px solid #c3e6cb; /* Bordure */
+    border-radius: 50px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre portée */
+    z-index: 9999; /* Assure que le message est au-dessus des autres éléments */
+    font-size: 16px; /* Taille de la police */
+    text-align: center; /* Centre le texte */
+    width: 250px; /* Ajuste la largeur du message */
+    height: 250px; /* Hauteur spécifique */
+    display: flex; /* Utilise flexbox pour centrer le texte verticalement */
+    align-items: center; /* Centre le texte verticalement */
+    justify-content: center; /* Centre le texte horizontalement */
+  }
+
+ 
+
+
+
+  /* styles.scss ou styles.css */
+.toast-top-right {
+    top: 10px; /* Ajustez cette valeur si nécessaire */
+    right: 10px; /* Ajustez cette valeur si nécessaire */
+  }
+  
+  .toast-success {
+    background-color: #28a745; /* Couleur de fond verte */
+    color: #fff; /* Couleur du texte en blanc pour le contraste */
+  }
+  
+  /* Optionnel : si vous souhaitez personnaliser le texte ou le titre */
+  .toast-title {
+    color: #fff; /* Couleur du titre */
+  }
+  
+  .toast-message {
+    color: #fff; /* Couleur du message */
+  }
+  
+  

@@ -1,0 +1,297 @@
+/* Style de la barre de navigation */
+.navbar {
+    background-color: #0d0e13; /* Couleur de fond de la barre de navigation */
+    padding: 0 15px; /* Espacement interne */
+    position: fixed; /* Position fixe en haut de la page */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Assure qu'elle reste au-dessus du contenu */
+}
+
+/* Logo de la barre de navigation */
+.navbar-logo {
+    color: #fff;
+    font-size: 1.5rem; /* Taille du texte du logo */
+}
+
+/* Styles pour le bouton de menu (pour les petits écrans) */
+.navbar-toggler {
+    border: none;
+    background: transparent;
+    color: #fff;
+}
+
+/* Styles pour la liste des éléments de la barre de navigation */
+#navbarSupportedContent {
+    display: flex;
+    justify-content: flex-end; /* Aligne les éléments à droite */
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-nav .nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.75); /* Couleur du texte des liens */
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    font-size: 15px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-link:hover {
+    color: #5161ce; /* Couleur du texte au survol */
+    background-color: rgba(255, 255, 255, 0.1); /* Fond au survol */
+}
+
+.nav-item.active .nav-link {
+    color: #5161ce; /* Couleur du texte pour l'élément actif */
+    background-color: transparent;
+}
+
+/* Selector horizontal */
+.hori-selector {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: #5161ce; /* Couleur de l'indicateur */
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.hori-selector .left,
+.hori-selector .right {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+}
+
+.hori-selector .right {
+    right: 0;
+}
+
+.hori-selector .left {
+    left: 0;
+}
+
+/* Réglages pour les écrans de taille moyenne */
+@media (max-width: 991px) {
+    .navbar-nav {
+        display: block;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item {
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 15px;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-custom .navbar-collapse {
+        display: flex;
+    }
+}
+
+
+
+
+/* Global styles for the sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px; /* Adds space between the list items */
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #ecf0f1;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+    margin-top: 30px; /* Adds space between the icon and the text */
+}
+
+.sidebar ul li a:hover {
+    background-color: #34495e;
+    color: #0eda19;
+}
+
+.sidebar ul li a.active {
+    background-color: #16a085;
+    color: #ffffff;
+}
+
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+/* Style de la barre de navigation */
+.navbar {
+    margin-bottom: 0;
+    z-index: 1000; /* Ensure it stays on top of other content */
+    position: fixed;
+    width: 100%;
+}
+
+/* Style de la barre latérale */
+.sidebar {
+    width: 250px;
+    position: fixed;
+    top: 60px; /* Height of the navbar */
+    left: 0;
+    bottom: 0;
+    background-color: #333;
+    color: #fff;
+    padding-top: 20px;
+    z-index: 999; /* Ensure it stays below the navbar but above the main content */
+}
+
+/* Style des éléments de la barre latérale */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+/* Style du contenu principal */
+.main-content {
+    margin-left: 250px; /* Same width as the sidebar */
+    margin-top: 60px; /* Height of the navbar */
+    padding: 20px;
+    background-color: #f8f9fa;
+    min-height: 100vh; /* Ensure it takes at least the full viewport height */
+}
+
+/* Style du lien contenant le logo */
+.navbar-logo {
+    position: relative; /* Nécessaire pour que z-index fonctionne */
+    z-index: 1000; /* Assure que le logo est au-dessus des autres éléments */
+}
+
+/* Style de l'image du logo */
+.navbar-logo-img {
+    height: 150px; /* Ajustez la hauteur de l'image selon vos besoins */
+    width: 150px;  /* Maintient le ratio de l'image */
+    display: block; /* Assure que l'image se comporte correctement dans le lien */
+    position: relative; /* Assure que z-index est appliqué correctement */
+    z-index: 1001; /* Assure que l'image est au-dessus du lien */
+}
+
+
+/* Style pour la barre de navigation */
+.navbar {
+    position: fixed; /* Fixe la barre de navigation en haut de la page */
+    width: 100%; /* Prend toute la largeur de la fenêtre */
+    top: 0; /* Positionne la barre en haut de la page */
+    z-index: 1000; /* Assure que la barre de navigation est au-dessus des autres éléments */
+    background-color: #0d0e13; /* Couleur de fond de la barre de navigation */
+}
+
+/* Style pour le lien contenant le logo */
+.navbar-logo {
+    display: flex; /* Utilise flexbox pour aligner le contenu */
+    align-items: center; /* Centre verticalement le logo */
+    padding: 0 15px; /* Ajoute un espace autour du logo */
+}
+
+/* Style pour l'image du logo */
+.navbar-logo-img {
+    height: 40px; /* Hauteur de l'image du logo */
+    width: auto; /* Maintient le ratio de l'image */
+    display: block; /* Assure que l'image se comporte correctement dans le lien */
+}
+
+/* Style pour le bouton de menu mobile */
+.navbar-toggler {
+    border: none; /* Supprime la bordure du bouton */
+    background: transparent; /* Rend l'arrière-plan transparent */
+}
+
+/* Style pour le menu de navigation */
+.navbar-nav {
+    display: flex; /* Utilise flexbox pour aligner les éléments horizontalement */
+    align-items: center; /* Centre verticalement les éléments du menu */
+    margin-left: auto; /* Aligne les éléments du menu à droite */
+}
+
+/* Style pour les éléments du menu */
+.navbar-nav .nav-item {
+    margin-left: 20px; /* Espacement entre les éléments du menu */
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255,255,255,0.8); /* Couleur des liens */
+    text-decoration: none; /* Supprime le soulignement des liens */
+    display: flex; /* Utilise flexbox pour aligner les icônes et le texte */
+    align-items: center; /* Centre verticalement le texte et l'icône */
+    padding: 15px 20px; /* Espacement autour des liens */
+    transition: color 0.3s ease; /* Transition douce pour les changements de couleur */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fff; /* Couleur des liens au survol */
+}
+
+
+/* app.component.css */
+.calendar-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Optionnel: ajustez la taille du calendrier */
+  .full-calendar {
+    width: 100%;
+    height: 600px;
+  }
+  

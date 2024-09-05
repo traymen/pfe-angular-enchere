@@ -1,0 +1,305 @@
+
+
+
+.form-label{
+  font-size: 1em;        /* Taille de police plus grande (1.5 fois la taille par défaut) */
+margin-top: 20px;
+margin-left: 10px; /* Largeur de la barre latérale */
+font-weight: bold;       /* Texte en gras */
+
+}
+
+
+/* styles.css ou your-component.component.css */
+.custom-alert {
+  padding: 15px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  border: 1px solid #bce8f1;
+  border-radius: 4px;
+  background-color: #d9edf7;
+  color: #0a181f;
+  font-size: 16px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-alert strong {
+  font-weight: bold;
+}
+
+
+
+.history-container {
+padding: 20px;
+max-width: 1200px;
+margin: auto;
+margin-left: 20px; /* Largeur de la barre latérale */
+margin-top: 5px; /* Hauteur de la barre de navigation */
+background-color: #f8f9fa; /* Exemple de couleur de fond */
+min-height: calc(100vh - 70px); /* Assurez-vous que le contenu couvre la hauteur restante */
+
+}
+
+.primary {
+text-align: center;
+font-size: 24px;
+color: #333;
+margin-bottom: 20px;
+}
+
+.mobilite-list {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: center;
+}
+
+.mobilite-card {
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+width: calc(33% - 20px);
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 10px;
+transition: transform 0.2s;
+}
+
+.mobilite-card:hover {
+transform: scale(1.05);
+}
+
+.enchere-image {
+width: 100%;
+height: 200px; /* Hauteur fixe souhaitée */
+overflow: hidden;
+border-radius: 10px 10px 0 0;
+}
+
+.flexible-image {
+width: 100%;
+height: 100%; /* Ajustement pour la hauteur fixe de l'image parent */
+object-fit: contain; /* Garantit que l'image entière est visible */
+}
+
+
+.property {
+width: 100%;
+text-align: left;
+margin: 10px 0;
+}
+
+.property span {
+font-size: 16px;
+color: #555;
+}
+
+.enchere-heure {
+display: flex;
+align-items: center;
+}
+
+.enchere-heure .icon-clock {
+margin-right: 5px;
+fill: #777;
+}
+
+
+
+.prixb, .date, .heure, .description, .nomproduit,.prix {
+font-weight: bold;       /* Texte en gras */
+font-size: 7.5em;        /* Taille de police plus grande (1.5 fois la taille par défaut) */
+}
+
+.property.text-secondary .prix{
+color:brown;
+font-size: 1.5em;        /* Taille de police plus grande (1.5 fois la taille par défaut) */
+}
+.property.text-secondaryyy {
+  color:brown;
+  font-size: 1.5em;   
+  text-align: center;  
+  margin-left: 75px;   /* Taille de police plus grande (1.5 fois la taille par défaut) */
+  }
+  .property.text-secondaryyy  .prix {
+    color:brown;
+    font-size: 1em;   
+    /* Taille de police plus grande (1.5 fois la taille par défaut) */
+    }
+ /* Pour centrer le contenu */
+
+.button-container {
+display: flex;
+flex-direction: column; /* Disposition en colonne pour les boutons */
+align-items: flex-end; /* Alignement des boutons à droite */
+margin-top: 10px; /* Espacement des boutons par rapport aux informations */
+}
+
+.top-buttons {
+margin-bottom: 10px;
+margin-right: 10px; /* Espacement entre les boutons du haut et du bas */
+}
+
+.bottom-buttons button {
+margin-top: 10px; 
+margin-right: 10px;  /* Espacement entre les boutons du bas */
+}
+
+.vertical-hr {
+border-left: 1px solid black; /* Définit la bordure à gauche pour créer une ligne verticale */
+height: 100px; /* Ajustez la hauteur selon vos besoins */
+margin: -50px /* Marge autour de la ligne verticale */
+}
+
+
+.heart-btn {
+font-size: 24px;
+border: none;
+background: none;
+cursor: pointer;
+outline: none;
+transition: color 0.3s ease;
+}
+
+.heart-btn.liked {
+color: red;
+}
+
+
+.property {
+margin-bottom: 10px;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+background-color: #f0f0f0;
+}
+
+.labell {
+font-weight: bold;
+}
+
+.value {
+margin-left: 10px;
+}
+.property.text-secondary {
+text-align: center; /* Pour centrer le contenu */
+}
+.property.text-secondary .p{
+color:brown;
+font-size: 2.5em;  
+font-weight: bold;    
+display: block; /* Assure que le span occupe toute la largeur */
+margin: 0 auto; /* Pour centrer le span */
+}
+
+
+
+
+.like-wrapper {
+--gap: 0.5em;
+--radius: 0.35em;
+display: flex;
+align-items: center;
+text-align: center;
+justify-content: center;
+--dot-bg: #212121;
+--dot-color: #313131;
+--dot-size: 1px;
+--dot-space: 22px;
+background: linear-gradient(
+      90deg,
+      var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+      transparent 1%
+    )
+    center / var(--dot-space) var(--dot-space),
+  linear-gradient(
+      var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+      transparent 1%
+    )
+    center / var(--dot-space) var(--dot-space),
+  var(--dot-color);
+border: 0.1em solid #313131;
+padding: 0.5em;
+border-radius: var(--radius);
+box-shadow: 0 0 1em 0.5em rgba(0, 0, 0, 0.1);
+cursor: pointer;
+}
+
+.check[type="checkbox"] {
+display: none;
+}
+
+.container {
+display: flex;
+align-items: center;
+cursor: pointer;
+margin-top: -0.25em;
+margin-bottom: -0.25em;
+}
+
+.icon {
+width: 1.5em;
+height: 1.5em;
+margin-left: 0.5em;
+fill: white;
+transition: opacity 0.3s ease-in-out;
+}
+
+.icon.active {
+display: none;
+fill: #f52121;
+}
+
+.check[type="checkbox"]:checked + .container .icon.active {
+display: inline-block;
+animation: wiggle 0.5s ease-in-out;
+}
+
+.check[type="checkbox"]:checked + .container .icon.inactive {
+display: none;
+}
+
+.like-text {
+margin-left: 0.5em;
+padding: 0.5em;
+color: white;
+font-family: Arial, sans-serif;
+font-weight: bolder;
+}
+
+@keyframes wiggle {
+0%,
+100% {
+  transform: rotate(0deg);
+}
+25% {
+  transform: rotate(-10deg);
+}
+50% {
+  transform: rotate(10deg);
+}
+75% {
+  transform: rotate(-10deg);
+}
+}
+
+
+.position-relative {
+  position: relative;
+}
+
+.custom-select {
+  padding-right: 2.5rem; /* Ajustez la taille du padding pour éviter que le texte ne chevauche l'icône */
+}
+
+.fas.fa-chevron-down {
+  position: absolute;
+  right: 15px; /* Positionne l'icône à droite */
+  top: 85%; /* Centre verticalement */
+  transform: translateY(-50%); /* Ajuste pour un centrage parfait */
+  pointer-events: none; /* Évite que l'icône interfere avec les clics */
+}

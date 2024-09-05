@@ -1,0 +1,90 @@
+
+
+
+
+
+
+
+/* reclamation-history.component.css */
+.history-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1em;
+    background: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .primary {
+    color: #111418;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  
+  .reclamation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  
+  .reclamation-card {
+    padding: 1em;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  
+  .property {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+  }
+  .propertyy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: inline-block;
+  animation: moveLeftRight 2s infinite ease-in-out;
+  }
+  .label {
+    font-weight: bold;
+    color: #333333;
+  }
+  
+  .text-secondary {
+    font-weight: bold;
+font-size: medium;
+    color: #666666;
+  }
+  .reponsee.etat-en-cours {
+    color: #ac1212;  /* Rouge pour "En cours de traitement" */
+  }
+  
+  .reponsee.etat-traite {
+    color: #28a745;  /* Vert pour "Traité" */
+  }
+  
+  .contenu, .type, .reponse {
+    font-weight: normal;
+  }
+  
+
+  @keyframes moveLeftRight {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(20px); /* Ajustez la distance du mouvement */
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }

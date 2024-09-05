@@ -1,0 +1,131 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <div class="p-2">
+    <h2 class="aa">Ajouter Des Enchéres</h2>
+    <div *ngIf="uploadErrorMsg" class="alert alert-danger">
+      {{ uploadErrorMsg }}
+    </div>
+    <hr>
+    <div class="alert alert-danger mt-2" role="alert" *ngIf="errorMsg.length">
+    </div>
+    <div class="d-flex gap-2">
+      <div class="col-3">
+        <img class="rounded-1" width="100%" height="100%" [src]="selectedPicture ? selectedPicture : 'https://via.placeholder.com/150?text=Not+Found'" alt="Not Found Image">
+        <div class="mt-2">
+          <input
+            (change)="onFileSelected($event)"
+            class="form-control"
+            type="file"
+            id="formFile"
+            accept="image/*"
+          >
+        </div>
+      </div>
+   
+      
+    
+
+      <div class="col-9">
+        <form [formGroup]="myForm" class="row g-3">
+          <div class="col-md-6">
+            <label for="nomProduit" class="form-label">Nom produit</label>
+            <input [(ngModel)]="enchereRequest.nomProduit" formControlName="nomProduit" class="form-control" id="nomProduit" name="nomProduit" placeholder="Nom produit">
+            <span style="color: red;" *ngIf="myForm.get('nomProduit')?.touched && myForm.get('nomProduit')?.hasError('required')">Veuillez remplir ce champ</span>
+          </div>
+          
+          <div class="col-md-6">
+            <label for="descriptionProduit" class="form-label">Description de produit</label>
+            <input [(ngModel)]="enchereRequest.descriptionProduit" formControlName="descriptionProduit" class="form-control" id="descriptionProduit" name="descriptionProduit" placeholder="Description de produit">
+            <span style="color: red;" *ngIf="myForm.get('descriptionProduit')?.touched && myForm.get('descriptionProduit')?.hasError('required')">Veuillez remplir ce champ</span>
+          </div>
+          
+          <div class="col-md-6">
+            <label for="prixProduit" class="form-label">Prix produit</label>
+            <input [(ngModel)]="enchereRequest.prix" formControlName="prix" class="form-control" id="prixProduit" name="prixProduit" placeholder="Prix produit">
+            <span style="color: red;" *ngIf="myForm.get('prix')?.touched && myForm.get('prix')?.hasError('required')">Veuillez remplir ce champ</span>
+            <span style="color: red;" *ngIf="myForm.get('prix')?.touched && myForm.get('prix')?.hasError('pattern')">Veuillez entrer uniquement des nombres</span>
+
+          </div>
+          
+          <div class="col-md-6">
+            <label for="nombreCondidat" class="form-label">Nombre Condidat</label>
+            <input [(ngModel)]="enchereRequest.nombreCondidat" formControlName="nombreCondidat" class="form-control" id="nombreCondidat" name="nombreCondidat" placeholder="Nombre Condidat">
+            <span style="color: red;" *ngIf="myForm.get('nombreCondidat')?.touched && myForm.get('nombreCondidat')?.hasError('required')">Veuillez remplir ce champ</span>
+            <span style="color: red;" *ngIf="myForm.get('nombreCondidat')?.touched && myForm.get('nombreCondidat')?.hasError('pattern')">Veuillez entrer uniquement des nombres</span>
+
+          </div>
+          <div class="col-md-6">
+            <label for="prixE" class="form-label">Prix D'enchere</label>
+            <input [(ngModel)]="enchereRequest.prixE" formControlName="prixE" class="form-control" id="prixE" name="prixE" placeholder="Prix D'enchere">
+            <span style="color: red;" *ngIf="myForm.get('prixE')?.touched && myForm.get('prixE')?.hasError('required')">Veuillez remplir ce champ</span>
+            <span style="color: red;" *ngIf="myForm.get('prixE')?.touched && myForm.get('prixE')?.hasError('pattern')">Veuillez entrer uniquement des nombres</span>
+
+          </div>
+          
+          <div class="col-md-6">
+            <label for="date" class="form-label">Date</label>
+            <input [(ngModel)]="enchereRequest.date" formControlName="date" type="date" class="form-control" id="date" name="date">
+            <span style="color: red;" *ngIf="myForm.get('date')?.touched && myForm.get('date')?.hasError('required')">Veuillez remplir ce champ</span>
+          </div>
+          
+          <div class="col-md-6">
+            <label for="heure" class="form-label">Heure</label>
+            <input [(ngModel)]="enchereRequest.heure" formControlName="heure" type="time" class="form-control" id="heure" name="heure">
+            <span style="color: red;" *ngIf="myForm.get('heure')?.touched && myForm.get('heure')?.hasError('required')">Veuillez remplir ce champ</span>
+          </div>
+          <div class="col-md-6 position-relative">
+            <label for="type" class="form-label">Type d'enchère</label>
+            <select [(ngModel)]="enchereRequest.type" formControlName="type" class="form-control custom-select" id="type" name="type">
+              <option value="" disabled selected hidden></option>
+              <option value="VETEMENTSPORT">Vêtements de sport</option>
+              <option value="ELECTRONIQUE">Électronique</option>
+              <option value="VETEMENT">Vêtements</option>
+              <option value="VOITURE">Voiture</option>
+              <option value="ELECTROMENAGER">Électroménager</option>
+              <option value="MONTREetBIJOUX">Montre et Bijoux</option>
+              <i class="fas fa-chevron-down position-absolute"></i>
+
+            </select>
+            <i class="fas fa-chevron-down position-absolute" style="right: 15px; top: 45px; pointer-events: none;"></i>
+            <span style="color: red;" *ngIf="myForm.get('type')?.touched && myForm.get('type')?.hasError('required')">Veuillez sélectionner un type</span>
+          </div>
+          <div class="col-md-6 d-flex align-items-center">
+            <label class="form-label mb-0">Enchère Privée :</label>
+            <label class="switch ms-2">
+              <input type="checkbox" formControlName="encherePrivee">
+              <span class="slider round"></span>
+            </label>
+          </div>
+          
+          
+
+          
+          <div class="d-flex justify-content-end gap-2 col-12">
+            <button type="button" (click)="saveenchere()" [ngClass]="{'btn-outline-danger': !myForm.valid, 'btn-outline-success': myForm.valid}" [disabled]="myForm.invalid" class="btn">
+              <i class="fas fa-save"></i>&nbsp;Save
+            </button>
+          </div>
+        </form>
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div *ngIf="showSuccess" class="success-dialog">
+    <div class="success-content">
+      <h3>Votre enchère a été ajoutée avec succès!</h3>
+      <!-- Ajoutez d'autres informations ou actions si nécessaire -->
+    </div>
+  </div>
+  
+
+
+
+
+
+  

@@ -1,0 +1,121 @@
+
+
+
+
+
+
+
+
+.btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+  }
+  
+  .btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .btn-outline-success {
+    border-color: #28a745;
+    color: #28a745;
+  }
+  
+  .btn-outline-success:hover {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .aa{
+    margin-left: 475px;
+    color: #555;
+  }
+
+
+
+  .rounded-1 {
+    border-radius: 0.25rem; /* Ajustez selon vos besoins pour les coins arrondis */
+    object-fit: cover; /* Pour s'assurer que l'image couvre tout l'espace disponible */
+  }
+  
+
+
+
+
+
+
+
+
+  .success-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .success-content {
+    text-align: center;
+  }
+  
+  .success-content h3 {
+    color: green;
+    font-size: 1.5em;
+  }
+  
+  
+
+  
+  
+  .custom-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    padding-right: 30px; /* Adjust padding for the arrow */
+    margin-left: 450px; /* Largeur de la barre latérale */
+    margin-top: 10px; /* Hauteur de la barre de navigation */
+  }
+  
+  .custom-select::-ms-expand {
+    display: none;
+  }
+  
+  .custom-select::before {
+    content: 'Choisir un type';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d; /* Placeholder color */
+    pointer-events: none;
+    display: block;
+  }
+  
+  .custom-select:focus::before,
+  .custom-select:valid::before {
+    display: none;
+  }
+  
+  .custom-placeholder {
+    position: absolute;
+    left: 15px;
+    top: 35px;
+    color: #6c757d; /* Bootstrap's placeholder color */
+    pointer-events: none;
+  }
+  .form-control {
+margin-left: 0px;
+  }
+
+
+
+
+  

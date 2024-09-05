@@ -1,0 +1,183 @@
+/* Filtrage */
+.position-relative {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+    margin-left: 250px; /* Largeur de la barre latérale */
+    margin-top: 5px; /* Hauteur de la barre de navigation */
+    font-size: 20px;
+}
+
+.custom-select {
+    width: 100%;
+    max-width: 500px; /* Largeur maximale souhaitée pour le sélecteur */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    margin-left: 250px; /* Largeur de la barre latérale */
+
+}
+
+
+.fa-chevron-down {
+    pointer-events: none; /* Ignore les événements de souris sur cet élément */
+    position: relative; /* Position relative pour que z-index fonctionne */
+    z-index: 1000; /* Valeur élevée pour être au-dessus des autres éléments */
+    margin-top: 300px; /* Ajuster la position verticale */
+}
+
+
+/* Historique des réclamations */
+.history-container {
+    margin-top: 20px;
+    margin-left: 50px; /* Largeur de la barre latérale */
+    margin-top: 5px; /* Hauteur de la barre de navigation */
+    background-color: #f8f9fa; /* Exemple de couleur de fond */
+
+}
+
+.primary {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.reclamation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.reclamation-card {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reclamation-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.property {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 5px;
+}
+.propertyy {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 5px;
+    display: inline-block;
+    animation: moveLeftRight 2s infinite ease-in-out;
+}
+
+.label {
+    font-weight: bold;
+    color: #495057;
+}
+
+.value {
+    color: #6c757d;
+    font-size: medium;
+    font-weight: bold;
+
+
+}
+
+.valuee.etat-en-cours {
+  color: #ac1212;  
+  font-weight: bold;
+  font-size: medium;/* Rouge pour "En cours de traitement" */
+}
+
+.valuee.etat-traite {
+  color: #28a745;
+  font-weight: bold;
+  font-size: medium;  /* Vert pour "Traité" */
+}
+.custom-alert {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Bouton stylisé */
+.btn-danger {
+    background-color: #2a669e;
+    color: white;
+    border: none;
+    padding: 0.5em 1.5em; /* Ajuster le padding pour un bouton plus large */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em; /* Taille du texte */
+    font-weight: bold; /* Texte en gras */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-danger:hover {
+    background-color: #93dde7;
+    transform: scale(1.05); /* Effet d'agrandissement au survol */
+  }
+  
+  .btn-danger:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+  }
+
+.oui {
+    background-color: red; /* Rouge pour non traité */
+    color: white;
+    padding: 0.5em;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-left: 730px;
+  }
+  
+  .non {
+    background-color: green; /* Vert pour traité */
+    color: white;
+    padding: 0.5em;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-left: 760px;
+
+  }
+  
+
+  @keyframes moveLeftRight {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(20px); /* Ajustez la distance du mouvement */
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+  .position-relative {
+    position: relative;
+  }
+  
+  .custom-select {
+    padding-right: 2.5rem; /* Ajustez la taille du padding pour éviter que le texte ne chevauche l'icône */
+  }
+  
+  .fas.fa-chevron-down {
+    position: absolute;
+    right: 15px; /* Positionne l'icône à droite */
+    top: 70%; /* Centre verticalement */
+    transform: translateY(-50%); /* Ajuste pour un centrage parfait */
+    pointer-events: none; /* Évite que l'icône interfere avec les clics */
+  }
+  

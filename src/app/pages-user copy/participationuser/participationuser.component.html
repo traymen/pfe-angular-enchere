@@ -1,0 +1,31 @@
+<body>
+  <div class="container">
+      <div class="notice">
+          <p>Notice :</p>
+          <ul>
+              <li>1 = 1 Dt</li>
+              <li>5 = 5 Dt</li>
+              <li>10 = 10 Dt</li>
+              <li>Exemple de prix : 157.58 Dt</li>
+          </ul>
+      </div>
+      <form [formGroup]="myForm" class="form-container">
+          <div class="form-group">
+              <label class="a" for="prix">Votre Prix :</label>
+              <div class="error-messages">
+                <span *ngIf="myForm.get('prix')?.touched && myForm.get('prix')?.hasError('required')">Veuillez remplir ce champ</span>
+                <span *ngIf="myForm.get('prix')?.touched && myForm.get('prix')?.hasError('pattern')">Veuillez entrer uniquement des nombres</span>
+            </div>
+              <input [(ngModel)]="participant.prix" formControlName="prix" id="prix" name="prix" type="text" placeholder="Entrez le prix" />
+             
+          </div>
+          <div class="button-container">
+              <button type="button" (click)="onSubmit()" [ngClass]="{'btn-outline-danger': !myForm.valid, 'btn-outline-success': myForm.valid}" [disabled]="myForm.invalid" class="btn">
+                  <i class="fas fa-save"></i>&nbsp;Enregistrer
+              </button>
+          </div>
+      </form>
+  </div>
+</body>
+
+<div *ngIf="showSuccess" class="success-message">Vous avez participé avec succès</div>

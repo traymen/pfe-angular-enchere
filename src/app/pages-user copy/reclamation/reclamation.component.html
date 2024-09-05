@@ -1,0 +1,18 @@
+<!-- reclamation-form.component.html -->
+<form (ngSubmit)="onSubmit(reclamationForm)" #reclamationForm="ngForm">
+    <div>
+        <label for="type">Type de Réclamation:</label>
+        <select id="type" [(ngModel)]="reclamtion.type" name="type" required>
+          
+          <option *ngFor="let type of type" [ngValue]="type.value">{{ type.label }}</option>
+
+        </select>
+      </div>
+    <div>
+      <label for="contenu">Contenu:</label>
+      <textarea id="contenu" [(ngModel)]="reclamtion.contenu" name="contenu" required></textarea>
+    </div>
+  
+    <button type="submit">Soumettre</button>
+  </form>
+  

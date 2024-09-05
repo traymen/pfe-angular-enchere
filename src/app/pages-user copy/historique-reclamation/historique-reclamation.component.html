@@ -1,0 +1,34 @@
+
+
+
+
+
+
+<!-- hitoru -->
+
+<div class="history-container">
+    <h2 class="primary">Mon historique de réclamation</h2>
+    <div class="reclamation-list">
+      <div *ngFor="let reclamation of history" class="reclamation-card">
+        <div class="info">
+          <div class="propertyy text-secondary" *ngIf="showResponse"@moveLeftRight>
+            <span class="reponsee" [ngClass]="getEtatClass(reclamation.etat)">{{ getEtatDescription(reclamation.etat) }}</span>
+          </div>
+          <div class="property text-secondary">
+            <span class="label">Réponse :</span>
+            <span class="type">{{ reclamation.reponse }}</span>
+          </div>
+          <div class="property text-secondary">
+            <span class="label">Type de réclamation:</span>
+            <span class="type">{{ getTypeDescription(reclamation.type) }}</span>
+          </div>
+          <div class="property text-secondary">
+            <span class="label">Contenu:</span>
+            <span class="contenu">{{ reclamation.contenu }}</span>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  

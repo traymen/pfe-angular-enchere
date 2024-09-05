@@ -1,0 +1,30 @@
+<div class="layout-topbar">
+    <a class="layout-topbar-logo" routerLink="">
+        <img src="assets/layout/images/{{layoutService.config().colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.svg" alt="logo">
+        <span>DIMA REBA7</span>
+    </a>
+
+    <button #menubutton class="p-link layout-menu-button layout-topbar-button" (click)="layoutService.onMenuToggle()">
+        <i class="pi pi-bars"></i>
+    </button>
+
+    <button #topbarmenubutton class="p-link layout-topbar-menu-button layout-topbar-button" (click)="layoutService.showProfileSidebar()">
+        <i class="pi pi-ellipsis-v"></i>
+    </button>
+
+    <div #topbarmenu class="layout-topbar-menu" [ngClass]="{'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible}">
+        <a (click)="account()" class="p-link layout-topbar-button" href="http://localhost:8080/realms/enchere/account/" target="_blank">
+            <i class="pi pi-user"></i>
+            <span>Profile</span>
+        </a>
+       
+        <a (click)="account()" class="p-link layout-topbar-button" href="http://localhost:8080/realms/enchere/account/#/account-security/signing-in" target="_blank">
+            <i class="pi pi-cog"></i>
+            <span>Settings</span>
+        </a>
+        <a (click)="logout()" class="p-link layout-topbar-button" href="#" target="_blank">
+            <i class="pi pi-sign-out"></i>
+            <span>Logout</span>
+        </a>
+    </div>
+</div>

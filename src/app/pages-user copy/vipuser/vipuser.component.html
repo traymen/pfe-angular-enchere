@@ -1,0 +1,24 @@
+<!-- enchere.component.html -->
+<form (ngSubmit)="onSubmit()" class="form-container">
+  <div class="form-group">
+    <label for="codeAcces" class="submit-buttonn">Entrez Votre Code d'accès :</label>
+    <input
+      type="text"
+      id="codeAcces"
+      [(ngModel)]="codeAcces"
+      name="codeAcces"
+      required
+      class="form-control"
+    />
+  </div>
+  <button type="submit" class="submit-button">Vérifier</button>
+</form>
+
+  
+
+  
+  <!-- Affichage d'un message d'erreur si l'enchère n'est pas trouvée -->
+  <div *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </div>
+  

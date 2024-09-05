@@ -1,0 +1,169 @@
+
+
+
+
+
+
+.history-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.primary {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.mobilite-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.mobilite-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(33% - 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  transition: transform 0.2s;
+}
+
+.mobilite-card:hover {
+  transform: scale(1.05);
+}
+
+.enchere-image {
+  width: 100%;
+  height: 200px; /* Hauteur fixe souhaitée */
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+
+.flexible-image {
+  width: 100%;
+  height: 100%; /* Ajustement pour la hauteur fixe de l'image parent */
+  object-fit: contain; /* Garantit que l'image entière est visible */
+}
+
+
+.property {
+  width: 100%;
+  text-align: left;
+  margin: 10px 0;
+}
+
+.property span {
+  font-size: 16px;
+  color: #555;
+}
+
+.enchere-heure {
+  display: flex;
+  align-items: center;
+}
+
+.enchere-heure .icon-clock {
+  margin-right: 5px;
+  fill: #777;
+}
+
+
+
+.prixb, .date, .heure, .description, .nomproduit,.prix {
+  font-weight: bold;       /* Texte en gras */
+  font-size: 7.5em;        /* Taille de police plus grande (1.5 fois la taille par défaut) */
+}
+
+.property.text-secondary .prix{
+  color:brown;
+  font-size: 1.5em;        /* Taille de police plus grande (1.5 fois la taille par défaut) */
+}
+.property.text-secondary .prixb{
+    color:brown;
+    font-size: 1.5em;        /* Taille de police plus grande (1.5 fois la taille par défaut) */
+  }
+
+.button-container {
+  display: flex;
+  flex-direction: column; /* Disposition en colonne pour les boutons */
+  align-items: flex-end; /* Alignement des boutons à droite */
+  margin-top: 10px; /* Espacement des boutons par rapport aux informations */
+}
+
+.top-buttons {
+  margin-bottom: 10px;
+  margin-right: 10px; /* Espacement entre les boutons du haut et du bas */
+}
+
+.bottom-buttons button {
+  margin-top: 10px; 
+  margin-right: 10px;  /* Espacement entre les boutons du bas */
+}
+
+.vertical-hr {
+  border-left: 1px solid black; /* Définit la bordure à gauche pour créer une ligne verticale */
+  height: 100px; /* Ajustez la hauteur selon vos besoins */
+  margin: -50px /* Marge autour de la ligne verticale */
+}
+
+
+.heart-btn {
+  font-size: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.3s ease;
+}
+
+.heart-btn.liked {
+  color: red;
+}
+
+
+.property {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+}
+
+.labell {
+  font-weight: bold;
+}
+
+.value {
+  margin-left: 10px;
+}
+.property.text-secondary {
+  text-align: center; /* Pour centrer le contenu */
+}
+.property.text-secondary .p{
+  color:brown;
+  font-size: 2.5em;  
+  font-weight: bold;    
+  display: block; /* Assure que le span occupe toute la largeur */
+  margin: 0 auto; /* Pour centrer le span */
+}
+
+
+.access-icon {
+  margin-top: 10px;
+  font-size: 1.5em; /* Ajuste la taille de l'étoile si nécessaire */
+  color: gold; /* Couleur de l'étoile */
+}
+
+.star-icon {
+  display: inline-block;
+}

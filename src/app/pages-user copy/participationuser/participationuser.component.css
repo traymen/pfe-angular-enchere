@@ -1,0 +1,155 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.notice {
+  text-align: center;
+  background-color: #e0f7fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notice p {
+  font-weight: bold;
+  margin: 0;
+  font-size: 16px;
+}
+
+.notice ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.notice li {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.error-messages {
+  color: red;
+  margin-top: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 50px;
+
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right:  150px;
+}
+
+.btn-outline-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.btn-outline-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+.a{
+  margin-left: 190px;
+}
+
+
+
+
+
+
+.success-message {
+  position: fixed; /* Utilise fixed pour que le message soit au-dessus du reste du contenu */
+  top: 50%; /* Positionne verticalement au milieu de la page */
+  left: 50%; /* Centre horizontalement */
+  transform: translate(-50%, -50%); /* Ajuste pour centrer précisément */
+  background-color: #d4edda; /* Couleur de fond verte claire */
+  color: #155724; /* Couleur du texte verte foncée */
+  padding: 15px; /* Espacement interne */
+  border: 1px solid #c3e6cb; /* Bordure */
+  border-radius: 50px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre portée */
+  z-index: 9999; /* Assure que le message est au-dessus des autres éléments */
+  font-size: 16px; /* Taille de la police */
+  text-align: center; /* Centre le texte */
+  width: 250px; /* Ajuste la largeur du message */
+  height: 250px; /* Hauteur spécifique */
+  display: flex; /* Utilise flexbox pour centrer le texte verticalement */
+  align-items: center; /* Centre le texte verticalement */
+  justify-content: center; /* Centre le texte horizontalement */
+}
+
+
+
+/* styles.scss ou styles.css */
+.toast-top-right {
+  top: 10px; /* Ajustez cette valeur si nécessaire */
+  right: 10px; /* Ajustez cette valeur si nécessaire */
+}
+
+.toast-success {
+  background-color: #28a745; /* Couleur de fond verte */
+  color: #fff; /* Couleur du texte en blanc pour le contraste */
+}
+
+/* Optionnel : si vous souhaitez personnaliser le texte ou le titre */
+.toast-title {
+  color: #fff; /* Couleur du titre */
+}
+
+.toast-message {
+  color: #fff; /* Couleur du message */
+}
+

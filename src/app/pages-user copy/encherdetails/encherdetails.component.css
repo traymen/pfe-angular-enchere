@@ -1,0 +1,389 @@
+.card {
+  --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+  width: 250px;
+  padding: 10px;
+  border-radius: 1rem;
+  background: var(--background);
+  position: relative;
+  z-index: 1;
+  margin: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-info {
+  --color: #181818;
+  background: #ffffff;
+  color: var(--color);
+  border-radius: .7rem;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.enchere-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.7rem;
+  margin-bottom: 10px;
+}
+
+.property {
+  margin: 5px 0;
+  text-align: left;
+  width: 100%;
+}
+
+.label {
+  font-weight: bold;
+  color: #333;
+}
+
+.prixE {
+  color: red;
+  font-weight: bold;
+}
+
+.inscription-button {
+  margin-top: 15px;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+.history-container {
+  max-width: 1200px;
+    margin-left: 30px; /* Largeur de la barre latérale */
+    margin-top: 10px; /* Hauteur de la barre de navigation */
+    background-color: #f8f9fa; /* Exemple de couleur de fond */
+
+}
+
+.primary {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.mobilite-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.mobilite-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(33% - 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  transition: transform 0.2s;
+}
+
+.mobilite-card:hover {
+  transform: scale(1.05);
+}
+
+.enchere-image {
+  width: 100%;
+  height: 200px; /* Hauteur fixe souhaitée */
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+
+.flexible-image {
+  width: 100%;
+  height: 100%; /* Ajustement pour la hauteur fixe de l'image parent */
+  object-fit: contain; /* Garantit que l'image entière est visible */
+}
+
+
+.property {
+  width: 100%;
+  text-align: left;
+  margin: 10px 0;
+}
+
+.property span {
+  font-size: 16px;
+  color: #555;
+}
+
+.enchere-heure {
+  display: flex;
+  align-items: center;
+}
+
+.enchere-heure .icon-clock {
+  margin-right: 5px;
+  fill: #777;
+}
+
+
+
+.prixb, .date, .heure, .description, .nomproduit,.prix {
+  font-weight: bold;       /* Texte en gras */
+  font-size: 7.5em;        /* Taille de police plus grande (1.5 fois la taille par défaut) */
+}
+
+.property.text-secondary .prix{
+  color:brown;
+  font-size: 1.5em;        /* Taille de police plus grande (1.5 fois la taille par défaut) */
+}
+.prixE {
+  color:brown;
+  font-size: 1.5em; 
+  font-weight: bold;       /* Texte en gras */
+}
+
+
+.vertical-hr {
+  border-left: 1px solid black; /* Définit la bordure à gauche pour créer une ligne verticale */
+  height: 100px; /* Ajustez la hauteur selon vos besoins */
+  margin: -50px /* Marge autour de la ligne verticale */
+}
+
+
+.heart-btn {
+  font-size: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.3s ease;
+}
+
+.heart-btn.liked {
+  color: red;
+}
+
+
+.property {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+}
+
+.labell {
+  font-weight: bold;
+}
+
+.value {
+  margin-left: 10px;
+}
+.property.text-secondary {
+  text-align: center; /* Pour centrer le contenu */
+}
+.property.text-secondary .p{
+  color:brown;
+  font-size: 2.5em;  
+  font-weight: bold;    
+  display: block; /* Assure que le span occupe toute la largeur */
+  margin: 0 auto; /* Pour centrer le span */
+}
+
+
+
+
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacement entre les groupes de boutons */
+  padding: 20px; /* Padding autour de la conteneur des boutons */
+  background-color: #f8f9fa; /* Optionnel : Couleur de fond pour meilleure visibilité */
+  border-radius: 8px; /* Optionnel : Coins arrondis pour un meilleur look */
+}
+
+.top-buttons,
+.bottom-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Espacement entre les boutons dans chaque groupe */
+}
+
+.vertical-hr {
+  height: 2px;
+  background-color: #dee2e6; /* Couleur pour la ligne verticale */
+  margin: 10px 0; /* Espacement autour de la ligne verticale */
+}
+
+
+
+.heart-btn {
+  font-size: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.3s ease;
+  }
+  
+  
+  
+  
+
+  .like-wrapper {
+    --gap: 0.5em;
+    --radius: 0.35em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    --dot-bg: blanchedalmond;
+    --dot-color: blanchedalmond;
+    --dot-size: 1px;
+    --dot-space: 22px;
+    background: linear-gradient(
+          90deg,
+          var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+          transparent 1%
+        )
+        center / var(--dot-space) var(--dot-space),
+      linear-gradient(
+          var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+          transparent 1%
+        )
+        center / var(--dot-space) var(--dot-space),
+      var(--dot-color);
+    border: 0.1em solid blanchedalmond;
+    padding: 0.5em;
+    border-radius: var(--radius);
+    box-shadow: 0 0 1em 0.5em rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .check[type="checkbox"] {
+    display: none;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: -0.25em;
+    margin-bottom: -0.25em;
+  }
+  
+  .icon {
+    width: 1.5em;
+    height: 1.5em;
+    margin-left: 0.5em;
+    fill: rgb(180, 23, 23);
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .icon.active {
+    display: none;
+    fill: brown;
+  }
+  
+  .check[type="checkbox"]:checked + .container .icon.active {
+    display: inline-block;
+    animation: wiggle 0.5s ease-in-out;
+  }
+  
+  .check[type="checkbox"]:checked + .container .icon.inactive {
+    display: none;
+  }
+  
+  .like-text {
+    margin-left: 0.5em;
+    padding: 0.5em;
+    color: rgb(167, 30, 30);
+    font-family: Arial, sans-serif;
+    font-weight: bolder;
+  }
+  
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    75% {
+      transform: rotate(-10deg);
+    }
+  }
+
+
+
+  .position-relative {
+    position: relative;
+  }
+  
+  .custom-select {
+    padding-right: 2.5rem; /* Ajustez la taille du padding pour éviter que le texte ne chevauche l'icône */
+  }
+  
+  .fas.fa-chevron-down {
+    position: absolute;
+    right: 15px; /* Positionne l'icône à droite */
+    top: 70%; /* Centre verticalement */
+    transform: translateY(-50%); /* Ajuste pour un centrage parfait */
+    pointer-events: none; /* Évite que l'icône interfere avec les clics */
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+  
+  

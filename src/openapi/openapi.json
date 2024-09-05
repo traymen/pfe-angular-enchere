@@ -1,0 +1,1255 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "OpenApi specification - aymen",
+        "description": "OpenApi documentation for application enchere anonyme",
+        "termsOfService": "Terms of service",
+        "contact": {
+            "name": "Aymen",
+            "url": "https://aymen.com/course",
+            "email": "trabelsyy.aymen@gmail.com"
+        },
+        "license": {
+            "name": "Licence name",
+            "url": "https://some-url.com"
+        },
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:1920",
+            "description": "Local ENV"
+        },
+        {
+            "url": "https://aymen.com/course",
+            "description": "PROD ENV"
+        }
+    ],
+    "security": [
+        {
+            "bearerAuth": []
+        }
+    ],
+    "paths": {
+        "/reclamation": {
+            "post": {
+                "tags": [
+                    "Reclamation"
+                ],
+                "operationId": "createReclamation",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Reclamation"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Reclamation"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/reclamation/AjoutReponseReclamtion": {
+            "post": {
+                "tags": [
+                    "Reclamation"
+                ],
+                "operationId": "ReponseReclamtion",
+                "parameters": [
+                    {
+                        "name": "idReclamation",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Reclamation"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/participant/AjouterParticipation": {
+            "post": {
+                "tags": [
+                    "Participant"
+                ],
+                "operationId": "saveParticipation",
+                "parameters": [
+                    {
+                        "name": "idEnchere",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Participant"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/participant/AjouterParticipationVip": {
+            "post": {
+                "tags": [
+                    "Participant"
+                ],
+                "operationId": "saveParticipationVip",
+                "parameters": [
+                    {
+                        "name": "codeAcces",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Participant"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/favoris/AjoutFavoris": {
+            "post": {
+                "tags": [
+                    "Favoris"
+                ],
+                "operationId": "addFavorite",
+                "parameters": [
+                    {
+                        "name": "idEnchere",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/enchere/cover/{enchere-id}": {
+            "post": {
+                "tags": [
+                    "Enchere"
+                ],
+                "operationId": "uploadEnchereCoverPicture",
+                "parameters": [
+                    {
+                        "name": "enchere-id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "file"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/enchere/ModifierEnchere": {
+            "post": {
+                "tags": [
+                    "Enchere"
+                ],
+                "operationId": "modifpost",
+                "parameters": [
+                    {
+                        "name": "idEnch",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Enchere"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/enchere/AjouterEnchere": {
+            "post": {
+                "tags": [
+                    "Enchere"
+                ],
+                "operationId": "saveEnchere",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Enchere"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "integer",
+                                    "format": "int32"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/enchere/AjoutEnchereTerminer": {
+            "post": {
+                "tags": [
+                    "Enchere"
+                ],
+                "operationId": "ajooutEcnhereTerminer",
+                "parameters": [
+                    {
+                        "name": "idEnch",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Enchere"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/create-payment-intent": {
+            "post": {
+                "tags": [
+                    "stripe-service"
+                ],
+                "operationId": "createPaymentIntent",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Request"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Response"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/reclamation/historiqueReclamtion": {
+            "get": {
+                "tags": [
+                    "Reclamation"
+                ],
+                "operationId": "getUserReclamtionHistory",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ReclamationResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/reclamation/AfficherListReclamtionByType": {
+            "get": {
+                "tags": [
+                    "Reclamation"
+                ],
+                "operationId": "getListReclamationType",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "ProblemeEnchere",
+                                "ProblemePaiement",
+                                "Problemecompteutilisateur",
+                                "Problemetechnique"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ReclamationResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/reclamation/AfficherListReclamation": {
+            "get": {
+                "tags": [
+                    "Reclamation"
+                ],
+                "operationId": "getListReclamationn",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ReclamationResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/participant/historique": {
+            "get": {
+                "tags": [
+                    "Participant"
+                ],
+                "operationId": "getUserParticipationHistory",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/HistoriqueParticipation"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/participant/counts": {
+            "get": {
+                "tags": [
+                    "Participant"
+                ],
+                "operationId": "getParticipantCounts",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ParticipantCountDTO"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/participant/ListeParticipationByIdEnchere": {
+            "get": {
+                "tags": [
+                    "Participant"
+                ],
+                "operationId": "afficherParticipants",
+                "parameters": [
+                    {
+                        "name": "idEnch",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Participant"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/favoris/ListeFavory": {
+            "get": {
+                "tags": [
+                    "Favoris"
+                ],
+                "operationId": "getListFavoriss",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/FavorisByUser"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/enchere/getEnchereByCodeAcces": {
+            "get": {
+                "tags": [
+                    "Enchere"
+                ],
+                "operationId": "getEnchereByCodeAcces",
+                "parameters": [
+                    {
+                        "name": "codeAcces",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Enchere"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/enchere/EnchereById": {
+            "get": {
+                "tags": [
+                    "Enchere"
+                ],
+                "operationId": "getEnchById",
+                "parameters": [
+                    {
+                        "name": "idEnch",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/EnchereResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/enchere/AfficherListEnchere": {
+            "get": {
+                "tags": [
+                    "Enchere"
+                ],
+                "operationId": "getListEnchere",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/EnchereResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/enchere/AfficherListEnchereByType": {
+            "get": {
+                "tags": [
+                    "Enchere"
+                ],
+                "operationId": "getListEnchereType",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "VETEMENTSPORT",
+                                "ELECTRONIQUE",
+                                "VETEMENT",
+                                "VOITURE",
+                                "ELECTROMENAGER",
+                                "MONTREetBIJOUX"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/EnchereResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/notifications": {
+            "get": {
+                "tags": [
+                    "Notification"
+                ],
+                "operationId": "getAllNotifications",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Notification"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/reclamation/{id}": {
+            "delete": {
+                "tags": [
+                    "Reclamation"
+                ],
+                "operationId": "deleteReclamation",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/favoris/favorites/{idFavoris}": {
+            "delete": {
+                "tags": [
+                    "Favoris"
+                ],
+                "operationId": "supprimerFavoris",
+                "parameters": [
+                    {
+                        "name": "idFavoris",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/enchere/DeleteEnchree": {
+            "delete": {
+                "tags": [
+                    "Enchere"
+                ],
+                "operationId": "deleteEnchere",
+                "parameters": [
+                    {
+                        "name": "EnchereId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Reclamation": {
+                "type": "object",
+                "properties": {
+                    "createdDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "idReclamation": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "contenu": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "ProblemeEnchere",
+                            "ProblemePaiement",
+                            "Problemecompteutilisateur",
+                            "Problemetechnique"
+                        ]
+                    },
+                    "firstname": {
+                        "type": "string"
+                    },
+                    "lastname": {
+                        "type": "string"
+                    },
+                    "gmail": {
+                        "type": "string"
+                    },
+                    "reponse": {
+                        "type": "string"
+                    },
+                    "etat": {
+                        "type": "string",
+                        "enum": [
+                            "En cours de traitement",
+                            "Traité"
+                        ]
+                    }
+                }
+            },
+            "Participant": {
+                "type": "object",
+                "properties": {
+                    "createdDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "idParticipant": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "prix": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "firstname": {
+                        "type": "string"
+                    },
+                    "lastname": {
+                        "type": "string"
+                    },
+                    "gmail": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Enchere": {
+                "type": "object",
+                "properties": {
+                    "createdDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "idEnchere": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "nomProduit": {
+                        "type": "string"
+                    },
+                    "descriptionProduit": {
+                        "type": "string"
+                    },
+                    "nombreCondidat": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "heure": {
+                        "$ref": "#/components/schemas/LocalTime"
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "nombreCondidatsInscrits": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "nombreCondidatsRestants": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "VETEMENTSPORT",
+                            "ELECTRONIQUE",
+                            "VETEMENT",
+                            "VOITURE",
+                            "ELECTROMENAGER",
+                            "MONTREetBIJOUX"
+                        ]
+                    },
+                    "etat": {
+                        "type": "string",
+                        "enum": [
+                            "Terminer",
+                            "Encours"
+                        ]
+                    },
+                    "encherePrivee": {
+                        "type": "boolean"
+                    },
+                    "codeAcces": {
+                        "type": "string"
+                    },
+                    "favorisList": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Favoris"
+                        }
+                    },
+                    "prix": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "prixE": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "prixGagnant": {
+                        "type": "number",
+                        "format": "float"
+                    }
+                }
+            },
+            "Favoris": {
+                "type": "object",
+                "properties": {
+                    "createdDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "idFavoris": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "favorisStatus": {
+                        "type": "boolean"
+                    },
+                    "favoris": {
+                        "$ref": "#/components/schemas/Enchere"
+                    }
+                }
+            },
+            "LocalTime": {
+                "type": "object",
+                "properties": {
+                    "hour": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "minute": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "second": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "nano": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                }
+            },
+            "Request": {
+                "required": [
+                    "amount",
+                    "productName"
+                ],
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "minimum": 4,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "productName": {
+                        "maxLength": 200,
+                        "minLength": 5,
+                        "type": "string"
+                    }
+                }
+            },
+            "Response": {
+                "type": "object",
+                "properties": {
+                    "intentID": {
+                        "type": "string"
+                    },
+                    "clientSecret": {
+                        "type": "string"
+                    }
+                }
+            },
+            "ReclamationResponse": {
+                "type": "object",
+                "properties": {
+                    "idReclamation": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "contenu": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "ProblemeEnchere",
+                            "ProblemePaiement",
+                            "Problemecompteutilisateur",
+                            "Problemetechnique"
+                        ]
+                    },
+                    "firstname": {
+                        "type": "string"
+                    },
+                    "lastname": {
+                        "type": "string"
+                    },
+                    "gmail": {
+                        "type": "string"
+                    },
+                    "reponse": {
+                        "type": "string"
+                    },
+                    "etat": {
+                        "type": "string",
+                        "enum": [
+                            "En cours de traitement",
+                            "Traité"
+                        ]
+                    }
+                }
+            },
+            "HistoriqueParticipation": {
+                "type": "object",
+                "properties": {
+                    "nomProduit": {
+                        "type": "string"
+                    },
+                    "descriptionProduit": {
+                        "type": "string"
+                    },
+                    "nombreCondidat": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "heure": {
+                        "$ref": "#/components/schemas/LocalTime"
+                    },
+                    "image": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "byte"
+                        }
+                    },
+                    "prix": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "prixBoutique": {
+                        "type": "number",
+                        "format": "float"
+                    }
+                }
+            },
+            "ParticipantCountDTO": {
+                "type": "object",
+                "properties": {
+                    "firstname": {
+                        "type": "string"
+                    },
+                    "lastname": {
+                        "type": "string"
+                    },
+                    "gmail": {
+                        "type": "string"
+                    },
+                    "participationCount": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                }
+            },
+            "FavorisByUser": {
+                "type": "object",
+                "properties": {
+                    "nomProduit": {
+                        "type": "string"
+                    },
+                    "descriptionProduit": {
+                        "type": "string"
+                    },
+                    "nombreCondidat": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "heure": {
+                        "$ref": "#/components/schemas/LocalTime"
+                    },
+                    "image": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "byte"
+                        }
+                    },
+                    "prix": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "idFavoris": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                }
+            },
+            "EnchereResponse": {
+                "type": "object",
+                "properties": {
+                    "idEnchere": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "nomProduit": {
+                        "type": "string"
+                    },
+                    "descriptionProduit": {
+                        "type": "string"
+                    },
+                    "nombreCondidat": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "heure": {
+                        "$ref": "#/components/schemas/LocalTime"
+                    },
+                    "image": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "format": "byte"
+                        }
+                    },
+                    "prix": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "nombreCondidatsInscrits": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "nombreCondidatsRestants": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "VETEMENTSPORT",
+                            "ELECTRONIQUE",
+                            "VETEMENT",
+                            "VOITURE",
+                            "ELECTROMENAGER",
+                            "MONTREetBIJOUX"
+                        ]
+                    },
+                    "etat": {
+                        "type": "string",
+                        "enum": [
+                            "Terminer",
+                            "Encours"
+                        ]
+                    },
+                    "codeAcces": {
+                        "type": "string"
+                    },
+                    "prixE": {
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "prixGagnant": {
+                        "type": "number",
+                        "format": "float"
+                    }
+                }
+            },
+            "Notification": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "auctionId": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "description": "JWT auth description",
+                "in": "header",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    }
+}

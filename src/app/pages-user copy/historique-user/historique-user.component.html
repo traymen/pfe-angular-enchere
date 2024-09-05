@@ -1,0 +1,58 @@
+
+
+
+
+
+
+<!-- hitoru -->
+
+<div class="history-container">
+  <h2 class="primary">Mon historique de participation</h2>
+  <div class="mobilite-list">
+    <div *ngFor="let enchere of history" class="mobilite-card">
+      <div *ngIf="enchere.codeAcces" class="access-icon">
+        <span class="star-icon">⭐</span> <!-- Ou tout autre icône de ton choix -->
+      </div>
+      <div class="image-and-info">
+        <div class="container">
+                    <div class="property text-secondary ">
+                        <span class="label">Votre Prix : </span>
+                        <span class="prixb">{{ enchere.prix }} <span class="label">DT</span></span>
+                    </div>
+        </div>
+        
+        <hr>
+
+        <div class="enchere-image">
+          <img [src]="'data:image/jpeg;base64,' + enchere.image" alt="Image de {{ enchere.nomProduit }}" class="flexible-image">
+        </div>
+        <hr>
+
+        <div class="info">
+         
+          <div class="property text-secondary">
+            <span class="label">Nom produit:</span>
+            <span class="nomproduit">{{ enchere.nomProduit }}</span>
+          </div>
+          <div class="property text-secondary">
+            <span class="label">Description produit:</span>
+            <span class="description">{{ enchere.descriptionProduit }}</span>
+          </div>
+          <div class="property text-secondary">
+            <span class="label">Prix Boutique:</span>
+            <span class="prixb">{{ enchere.prixBoutique }}                 <span class="label">DT</span>
+        </span>
+        </div>
+          <div class="property text-secondary">
+            <span class="label">Date:</span>
+            <span class="date">{{ enchere.date }}</span>
+          </div>
+          <div class="property text-secondary">
+            <span class="label">Heure:</span>
+            <span class="heure">{{ enchere.heure }}</span>
+          </div>
+         
+      </div>
+     
+  </div>
+</div>
